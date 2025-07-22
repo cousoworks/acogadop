@@ -1,17 +1,15 @@
-version: '3.8'
-
 services:
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile.dev
     ports:
-      - "3000:3000"
+      - "9258:3000"
     volumes:
       - ./frontend:/app
       - /app/node_modules
     environment:
-      - VITE_API_URL=http://localhost:8000
+      - VITE_API_URL=http://localhost:9147
     depends_on:
       - backend
     networks:
@@ -22,14 +20,14 @@ services:
       context: ./backend
       dockerfile: Dockerfile.dev
     ports:
-      - "8000:8000"
+      - "9147:8000"
     volumes:
       - ./backend:/app
       - ./backend/uploads:/app/uploads
     environment:
       - DATABASE_URL=sqlite:///./foster_dogs.db
       - SECRET_KEY=your-secret-key-change-in-production
-      - CORS_ORIGINS=http://localhost:3000
+      - CORS_ORIGINS=http://localhost:9258
     networks:
       - app-network
 

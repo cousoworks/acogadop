@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Search, Filter, MapPin, Calendar, Heart } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import LoadingSpinner from '../components/LoadingSpinner'
 
 const Dogs = () => {
@@ -236,9 +237,9 @@ const Dogs = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="card-hover group"
+              className="card-hover group hover-lift"
             >
-              <div className="relative">
+              <div className="relative image-hover-zoom">
                 <img
                   src={dog.image}
                   alt={dog.name}
@@ -287,9 +288,12 @@ const Dogs = () => {
                 </p>
                 
                 <div className="flex gap-2">
-                  <button className="btn-primary flex-1 text-sm py-2">
+                  <Link 
+                    to={`/dogs/${dog.id}`}
+                    className="btn-primary flex-1 text-sm py-2 text-center"
+                  >
                     Ver Detalles
-                  </button>
+                  </Link>
                   <button className="btn-secondary text-sm py-2 px-3">
                     <Heart className="w-4 h-4" />
                   </button>
