@@ -8,6 +8,12 @@ passlib[bcrypt]==1.7.4
 sqlalchemy==2.0.23
 Pillow==10.1.0
 
+# Web scraping and scheduling
+aiohttp==3.9.1
+beautifulsoup4==4.12.2
+feedparser==6.0.10
+APScheduler==3.10.4
+
 # Development dependencies
 pytest==7.4.3
 pytest-asyncio==0.21.1

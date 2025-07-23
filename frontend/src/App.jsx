@@ -13,6 +13,8 @@ import DogDetail from './pages/DogDetail'
 import Profile from './pages/Profile'
 import MyFosters from './pages/MyFosters'
 import AddDog from './pages/AddDog'
+import ShelterRegister from './pages/ShelterRegister'
+import AdminPanel from './pages/AdminPanel'
 import NotFound from './pages/NotFound'
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
           <Route path="dogs/:id" element={<DogDetail />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="shelter-register" element={<ShelterRegister />} />
         </Route>
 
         {/* Protected routes */}
@@ -39,6 +42,7 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="my-fosters" element={<MyFosters />} />
           <Route path="add-dog" element={<AddDog />} />
+          <Route path="admin" element={<AdminPanel />} />
         </Route>
 
         {/* 404 */}

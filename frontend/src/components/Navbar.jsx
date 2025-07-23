@@ -33,7 +33,12 @@ const Navbar = () => {
 
   const authNavItems = [
     { to: '/my-fosters', label: 'Mis Acogidas', icon: Heart },
-    { to: '/add-dog', label: 'Añadir Perro', icon: Plus },
+    ...(user?.user_type === 'shelter_admin' || user?.user_type === 'admin' 
+      ? [{ to: '/add-dog', label: 'Añadir Perro', icon: Plus }] 
+      : []),
+    ...(user?.user_type === 'admin' 
+      ? [{ to: '/admin', label: 'Admin Panel', icon: User }] 
+      : [])
   ]
 
   const isActive = (path) => location.pathname === path

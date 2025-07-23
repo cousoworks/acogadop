@@ -159,12 +159,20 @@ const Login = () => {
               </div>
             </div>
 
-            <div className="mt-6">
+            <div className="mt-6 space-y-3">
               <Link
                 to="/register"
                 className="w-full btn-secondary py-3 flex items-center justify-center"
               >
                 Crear cuenta nueva
+              </Link>
+              
+              <Link
+                to="/shelter-register"
+                className="w-full bg-orange-50 text-orange-700 border border-orange-200 hover:bg-orange-100 hover:border-orange-300 py-3 px-4 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center"
+              >
+                <span className="mr-2">🏠</span>
+                Registrar Perrera
               </Link>
             </div>
           </div>
